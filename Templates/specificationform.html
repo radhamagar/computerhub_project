@@ -1,0 +1,62 @@
+{% comment %} {% load widget_tweaks %} {% endcomment %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <style>
+    .navbar {
+      background-color: blue;
+    }
+
+    .navbar .nav-link {
+      color: white;
+    }
+  </style>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+  <div class="container-fluid">
+    {% include 'navbar.html' %}
+
+    <div class="container">
+
+
+        <h1>Specification Form</h1>
+  <form method="POST">
+    {% csrf_token %}
+<!--    {{ computer.as_p }} -->
+
+<div class="form-group">
+  <label for="generation">Generation</label>
+  {{ form.generation}}
+</div>
+
+<div class="form-group">
+  <label for="price_min">Min Price</label>
+  {{ form.price_min }}
+</div>
+
+<div class="form-group">
+  <label for="price_max">Max Price</label>
+  {{ form.price_max }}
+</div>
+
+<div class="form-group">
+  <label for="ram">Ram</label>
+  {{ form.ram }}
+</div>
+
+<div class="form-group">
+  <label for="brand">Brand</label>
+  {{ form.brand }}
+</div><br>
+
+<button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+
+</div>
+</div>
+</body>
+</html>

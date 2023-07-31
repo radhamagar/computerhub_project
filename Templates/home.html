@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="just basic html">
+    <meta name="Keywords" content="Html,Css,js">
+    <meta name="Author" content="Radha">
+    <meta http-equiv="refresh" content=""> 
+    <link rel="icon" type="image" src="https://edge-a.anydone.com/e344ce6892a7480d9ae5aaff9d3f96d6.svg">
+    {% comment %} <link rel="stylesheet" type="text/css" href="style.css"> {% endcomment %}
+    <title>Home page</title>
+    
+    <style type="text/css">
+      h1 {text-align: center;}
+      th, td {
+        border: 1px solid black;
+        border-radius: 5px;
+       
+      }
+      table{padding:60px}
+      table {
+        table-layout: fixed;
+        width: 100%;  
+      }
+      </style>
+      
+  </head>  
+  <body> 
+<!--this division is for heading and paragraph-->
+<div class="one">
+<h1 font style="50 px"><b>Welcome to Computer Hub</b></h1>
+</div>
+ {% include 'navbar.html' %}
+ <table style="width:100%" >
+  
+  <tr>
+    <th>SN</th>
+    <th>Computer Code</th>
+    <th>Computer</th>
+    <th>Quantity</th>
+    <th>Unit Price</th>
+    <th>Total Price</th>
+    <th>Action</th>
+  </tr>
+    {% for item in list %}
+    <tr>
+      <th scope="row">{{ forloop.counter }}</th>
+
+      <td>{{item.computer_code}}</td>
+      <td>{{ item.computer }}</td>
+      <td>{{item.quantity}}</td>
+      <td>{{ item.unit_rate }}</td>
+      <td>{{ item.total_price }}</td>
+      <td class="action-buttons">
+        <a href="{% url 'update_computer' item.pk %}" class="btn btn-primary">Edit</a>
+        <a href="{% url 'delete_computer' item.pk %}" class="btn btn-danger">Delete</a>
+      </td>
+    </tr>
+{% endfor %}
+</table>
+<section>
+<ul>
+      {% for computer in computers %}
+          <li>{{ computer.computer_code }} - {{ computer.computer }}</li>
+      {% endfor %}
+  </ul>
+</section>
+  
+</body>
+</html>

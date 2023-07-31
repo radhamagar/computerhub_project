@@ -1,0 +1,77 @@
+
+   <!--this division is for navigation bar-->
+   <head>
+   <a class="navbar-brand" href="#">
+    <img src="https://edge-a.anydone.com/e344ce6892a7480d9ae5aaff9d3f96d6.svg" alt="Logo" width="30" height="30" class="d-inline-block align-top">
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <style>
+    {box-sizing: border-box}
+body {font-family: Arial, Helvetica, sans-serif;}
+
+.navbar {
+  width: 100%;
+  background-color: #555;
+  overflow: auto;
+}
+
+.navbar a {
+  float: left;
+  padding: 15px;
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+  width: 18%; /* Four links of equal widths */
+  text-align: center;
+  line-height: 30px;
+  border-radius: 4px;
+}
+
+.navbar a:hover {
+  background-color: #000;
+}
+
+.navbar a.active {
+  background-color: #04AA6D;
+}
+
+@media screen and (max-width: 100px) {
+  .navbar a {
+    float: none;
+    display: block;
+    width: 100%;
+    text-align: left;
+  
+  }
+}
+  </style>
+  
+
+<body>
+    <div class="navbar">
+      <nav>
+           <a href="{% url 'home' %}">Home</a>
+           <a href="{% url 'brand' %}">Brands</a>
+           <a href="{% url 'specification' %}">Specification</a>
+           <a href="{% url 'generation' %}">Generation</a>
+           <a href="{% url 'computer' %}">Computer</a>
+           
+      </nav>
+    </div>
+    
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+ 

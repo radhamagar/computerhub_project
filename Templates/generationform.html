@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <style>
+    .navbar {
+      background-color: blue;
+    }
+
+    .navbar .nav-link {
+      color: white;
+    }
+  </style>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+  <div class="container-fluid">
+    {% include 'navbar.html' %}
+
+    <div class="container">
+
+
+        <h1>Generation Form</h1>
+  <form method="POST" action="">
+    {% csrf_token %}
+
+    <div class="form-group">
+      <label for="generation">Computer Generation</label>
+      {{ form.generation }}
+    </div><br>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+
+
+    </div>
+  </div>
+
+  
+</body>
+</html>

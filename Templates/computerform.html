@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const quantityInput = document.getElementById('id_quantity');
+      const unitPriceInput = document.getElementById('id_unit_price');
+      const totalPriceInput = document.getElementById('id_total_price');
+  
+      quantityInput.addEventListener('input', calculateTotal);
+      unitPriceInput.addEventListener('input', calculateTotal);
+  
+      function calculateTotal() {
+        const quantity = parseInt(quantityInput.value, 10);
+        const unitPrice = parseInt(unitPriceInput.value, 10);
+        const totalPrice = quantity * unitPrice || 0;
+        totalPriceInput.value = totalPrice;
+      }
+    });
+  </script>
+    <style>
+      {box-sizing: border-box}
+body {font-family: Arial, Helvetica, sans-serif;}
+
+.navbar {
+  width: 100%;
+  background-color: #555;
+  overflow: auto;
+}
+
+.navbar a {
+  float: left;
+  padding: 15px;
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+  width: 18%; /* Four links of equal widths */
+  text-align: center;
+  line-height: 30px;
+  border-radius: 4px;
+}
+
+.navbar a:hover {
+  background-color: #000;
+}
+
+.navbar a.active {
+  background-color: #04AA6D;
+}
+
+@media screen and (max-width: 100px) {
+  .navbar a {
+    float: none;
+    display: block;
+    width: 100%;
+    text-align: left;
+  
+  }
+}
+     </style>
+     <meta charset="UTF-8">
+     <title>Title</title>
+   </head>
+   <body>
+    <div class="container-fluid">
+      {% include 'navbar.html' %}
+      <div class="container">
+   
+        <h1>Computer Form</h1>
+  <form method="POST" action="" enctype="multipart/form-data">
+    {% csrf_token %}
+
+    <div class="form-group">
+      <label for="computer_code">Computer Code</label>
+      {{ form.computer_code }}
+    </div>
+
+    <div class="form-group">
+      <label for="computer">Computer</label>
+      {{ form.computer }}
+    </div>
+
+    <div class="form-group">
+      <label for="computer_unit">Unit Price</label>
+      {{ form.unit_rate }}
+    </div>
+
+    <div class="form-group">
+      <label for="computer_quantity">Quantity</label>
+      {{ form.quantity}}
+    </div>
+
+    <div class="form-group">
+    <label for="computer_code">Total Price</label>
+    {{ form.total_price }}
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+
+
+    </div>
+  </div>
+  <footer>
+    <p>Contact us: info@computerhub.com</p>
+</footer>
+</body>
+</html>
+
+    
